@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerical Methods Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            color: white;
+        }
+        .method-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .method-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .category-title {
+            color: white;
+            font-weight: bold;
+            margin: 2rem 0 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-calculator me-2"></i>
+                Numerical Methods Calculator
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/compare">Compare Methods</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section text-center">
+            <h1 class="display-4 mb-4">
+                <i class="fas fa-calculator me-3"></i>
+                Numerical Methods Calculator
+            </h1>
+            <p class="lead mb-4">
+                A comprehensive tool for students and teachers to explore various numerical methods
+                with step-by-step solutions, error analysis, and visualizations.
+            </p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="fas fa-search fa-2x text-white mb-2"></i>
+                        <h5 class="text-white">Root Finding</h5>
+                        <p class="text-white-50">Find roots of equations</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="fas fa-table fa-2x text-white mb-2"></i>
+                        <h5 class="text-white">Linear Equations</h5>
+                        <p class="text-white-50">Solve systems of equations</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line fa-2x text-white mb-2"></i>
+                        <h5 class="text-white">Interpolation</h5>
+                        <p class="text-white-50">Fit curves through points</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="fas fa-chart-area fa-2x text-white mb-2"></i>
+                        <h5 class="text-white">Integration & ODEs</h5>
+                        <p class="text-white-50">Numerical integration and differential equations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Root Finding Methods -->
+        <h2 class="category-title">
+            <i class="fas fa-search me-2"></i>
+            Root Finding Methods
+        </h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-primary">
+                            <i class="fas fa-divide"></i>
+                        </div>
+                        <h5 class="card-title">Bisection Method</h5>
+                        <p class="card-text">Find roots using interval halving with guaranteed convergence.</p>
+                        <a href="/method/bisection" class="btn btn-primary">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-success">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <h5 class="card-title">Newton-Raphson</h5>
+                        <p class="card-text">Fast convergence using derivatives and tangent lines.</p>
+                        <a href="/method/newton_raphson" class="btn btn-success">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-warning">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h5 class="card-title">Regula Falsi</h5>
+                        <p class="card-text">False position method combining bisection and secant.</p>
+                        <a href="/method/regula_falsi" class="btn btn-warning">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-info">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h5 class="card-title">Secant Method</h5>
+                        <p class="card-text">Newton-like method without requiring derivatives.</p>
+                        <a href="/method/secant" class="btn btn-info">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Linear Equations Methods -->
+        <h2 class="category-title">
+            <i class="fas fa-table me-2"></i>
+            Linear Equations Methods
+        </h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-primary">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h5 class="card-title">Gauss-Jacobi</h5>
+                        <p class="card-text">Iterative method for solving linear systems.</p>
+                        <a href="/method/gauss_jacobi" class="btn btn-primary">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-success">
+                            <i class="fas fa-forward"></i>
+                        </div>
+                        <h5 class="card-title">Gauss-Seidel</h5>
+                        <p class="card-text">Improved iterative method with faster convergence.</p>
+                        <a href="/method/gauss_seidel" class="btn btn-success">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-warning">
+                            <i class="fas fa-th"></i>
+                        </div>
+                        <h5 class="card-title">Thomas Algorithm</h5>
+                        <p class="card-text">Direct method for tridiagonal systems.</p>
+                        <a href="/method/thomas_algorithm" class="btn btn-warning">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interpolation Methods -->
+        <h2 class="category-title">
+            <i class="fas fa-chart-line me-2"></i>
+            Interpolation Methods
+        </h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-primary">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h5 class="card-title">Newton Interpolation</h5>
+                        <p class="card-text">Divided difference method for polynomial interpolation.</p>
+                        <a href="/method/newton_interpolation" class="btn btn-primary">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-success">
+                            <i class="fas fa-bezier-curve"></i>
+                        </div>
+                        <h5 class="card-title">Lagrange Interpolation</h5>
+                        <p class="card-text">Classical polynomial interpolation method.</p>
+                        <a href="/method/lagrange_interpolation" class="btn btn-success">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integration Methods -->
+        <h2 class="category-title">
+            <i class="fas fa-chart-area me-2"></i>
+            Integration Methods
+        </h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-primary">
+                            <i class="fas fa-square"></i>
+                        </div>
+                        <h5 class="card-title">Trapezoidal Rule</h5>
+                        <p class="card-text">Approximate definite integrals using trapezoids.</p>
+                        <a href="/method/trapezoidal" class="btn btn-primary">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-success">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h5 class="card-title">Simpson's Rule</h5>
+                        <p class="card-text">Higher accuracy using quadratic approximations.</p>
+                        <a href="/method/simpson" class="btn btn-success">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-warning">
+                            <i class="fas fa-dot-circle"></i>
+                        </div>
+                        <h5 class="card-title">Midpoint Rule</h5>
+                        <p class="card-text">Simple integration using midpoint values.</p>
+                        <a href="/method/midpoint" class="btn btn-warning">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabular Integration Methods -->
+        <h2 class="category-title">
+            <i class="fas fa-table me-2"></i>
+            Tabular Integration Methods
+        </h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-info">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h5 class="card-title">Trapezoidal Rule (Tabular)</h5>
+                        <p class="card-text">Integration using tabular data with trapezoidal rule.</p>
+                        <a href="/method/trapezoidal_tabular" class="btn btn-info">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-info">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h5 class="card-title">Simpson's Rule (Tabular)</h5>
+                        <p class="card-text">Integration using tabular data with Simpson's rule.</p>
+                        <a href="/method/simpson_tabular" class="btn btn-info">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-info">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h5 class="card-title">Midpoint Rule (Tabular)</h5>
+                        <p class="card-text">Integration using tabular data with midpoint rule.</p>
+                        <a href="/method/midpoint_tabular" class="btn btn-info">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ODE Methods -->
+        <h2 class="category-title">
+            <i class="fas fa-chart-line me-2"></i>
+            Differential Equations Methods
+        </h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-primary">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <h5 class="card-title">Euler Method</h5>
+                        <p class="card-text">Basic first-order ODE solver using tangent lines.</p>
+                        <a href="/method/euler" class="btn btn-primary">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-success">
+                            <i class="fas fa-arrows-alt-h"></i>
+                        </div>
+                        <h5 class="card-title">Modified Euler</h5>
+                        <p class="card-text">Improved Euler method with predictor-corrector.</p>
+                        <a href="/method/modified_euler" class="btn btn-success">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card method-card h-100">
+                    <div class="card-body text-center">
+                        <div class="method-icon text-warning">
+                            <i class="fas fa-sort-amount-up"></i>
+                        </div>
+                        <h5 class="card-title">RK2 Method</h5>
+                        <p class="card-text">Second-order Runge-Kutta method for ODEs.</p>
+                        <a href="/method/rk2" class="btn btn-warning">
+                            <i class="fas fa-play me-1"></i>
+                            Try Method
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">
+                <i class="fas fa-graduation-cap me-2"></i>
+                Numerical Methods Calculator - Educational Tool for Students and Teachers
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
